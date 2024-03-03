@@ -60,7 +60,7 @@
     "vite-tsconfig-paths": "^4.2.2"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx,css,scss,json}": [
+    "*.{js,ts,jsx,tsx,css,scss,json,md}": [
       "prettier --write"
     ],
     "*.{js,ts,jsx,tsx}": [

@@ -6,23 +6,27 @@
 
 ### Login and Logout
 
-...
+![Login](https://raw.githubusercontent.com/hongduc-phan/keypro-assigment/main/docs/assets/login.jpeg)
+
+![Logout](https://raw.githubusercontent.com/hongduc-phan/keypro-assigment/main/docs/assets/logout.jpeg)
 
 ### Points display
 
-...
+![Points](https://raw.githubusercontent.com/hongduc-phan/keypro-assigment/main/docs/assets/points.jpeg)
 
 Cluster support to improve perfomance when display many points
 
-...
+![Cluster](https://raw.githubusercontent.com/hongduc-phan/keypro-assigment/main/docs/assets/cluster.jpeg)
 
 ### Point add new
 
-...
+![Add point instruction](https://raw.githubusercontent.com/hongduc-phan/keypro-assigment/main/docs/assets/add-point-1.jpeg)
+
+![Add point form](https://raw.githubusercontent.com/hongduc-phan/keypro-assigment/main/docs/assets/add-point-2.jpeg)
 
 ### Point editing
 
-...
+![Edit point form](https://raw.githubusercontent.com/hongduc-phan/keypro-assigment/main/docs/assets/edit-point.jpeg)
 
 ## Enviroment config
 
@@ -104,7 +108,9 @@ Form validation is always needed. We can guide the user to the correct data when
 
 ## Code quality
 
-- Ensure the code linted with `eslint`, `style-lint`
-- Formated code with `prettier`
+- Ensured the code quality with `eslint`, `style-lint`
+- Formated the code with `prettier`
 - Commit lint `commit-lint`
 - All the process automatically when commit the code by `husky`, `lint-staged`
+
+Although some developers might trick the process by bypass the commit hook. In the real project, we should protect the important branches (prevent merge directly) and setup CI to check the code quality before merge request.
