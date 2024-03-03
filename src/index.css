@@ -1,0 +1,31 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #eff2f7;
+  font-size: 16px;
+  color: #000;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.gm-style iframe + div {
+  border: none !important;
+}
+
+.editing-point {
+  transition: transform 0.2s ease-in-out;
+  animation: editing-point 0.5s infinite alternate;
+  will-change: transform;
+}
+
+@keyframes editing-point {
+  0% {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 4px, 0);
+  }
+}
