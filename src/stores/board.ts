@@ -7,7 +7,6 @@ export interface ChatState {
   map?: google.maps.Map;
   currentType?: BoardObjectType;
   currentMarker?: { lat: number; lng: number };
-  points?: PointMarker[];
   editingPoint?: PointMarker;
   set: (cb: (state: Draft<ChatState>) => void) => void;
 }

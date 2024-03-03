@@ -68,9 +68,9 @@ export function AppHeader() {
               <Button disabled>Save as template</Button>
               <DropdownMenu>
                 <DropdownMenuTrigger>
-                  <button className="w-9 h-9 inline-flex justify-center items-center font-medium bg-[#007AFF] text-white rounded-full border-[2px] border-white">
+                  <div className="w-9 h-9 inline-flex justify-center items-center font-medium bg-[#007AFF] text-white rounded-full border-[2px] border-white">
                     A
-                  </button>
+                  </div>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
