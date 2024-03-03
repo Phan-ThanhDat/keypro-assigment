@@ -16,6 +16,10 @@ npm run dev
 
 Check [localhost:5173](http://localhost:5173)
 
+### Dev container
+
+The project have configure devcontainer as well.
+
 ### Docker Enviroment
 
 Make sure your machine installed Docker
@@ -31,5 +35,3 @@ npm run dev:docker
 ```
 
 Check [localhost:5173](http://localhost:5173)
-
-The project have configure devcontainer as well.

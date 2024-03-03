@@ -5,9 +5,19 @@ export default {
     extend: {
       colors: {
         background: "#eff2f7",
-        destructive: "#ff4d4f",
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        popover: {
+          DEFAULT: "#eff2f7",
+        },
+        accent: {
+          DEFAULT: "#DEE2E9",
+        },
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line no-undef
+  plugins: [require("tailwindcss-animate")],
 };

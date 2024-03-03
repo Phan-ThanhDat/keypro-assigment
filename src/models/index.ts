@@ -17,3 +17,8 @@ export interface PointMarker {
   usageState: string;
   owner: string;
 }
+
+export interface User {
+  id: string;
+  email: string;
+}

@@ -1,4 +1,14 @@
-import { Button, IconButton, Logo } from "@components";
+import {
+  Button,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+  IconButton,
+  Logo,
+} from "@components";
 import {
   Cursor,
   Locate,
@@ -8,8 +18,10 @@ import {
   ZoomIn,
   ZoomOut,
 } from "@components/icons";
+import { useLogout } from "@hooks";
 
 export function AppHeader() {
+  const logout = useLogout();
   return (
     <header className="py-4 flex-shrink-0">
       <div className="px-4 mx-auto">
@@ -54,9 +66,24 @@ export function AppHeader() {
               </div>
 
               <Button disabled>Save as template</Button>
-              <button className="w-9 h-9 inline-flex justify-center items-center font-medium bg-[#007AFF] text-white rounded-full border-[2px] border-white">
-                A
-              </button>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <button className="w-9 h-9 inline-flex justify-center items-center font-medium bg-[#007AFF] text-white rounded-full border-[2px] border-white">
+                    A
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem
+                    onClick={() => {
+                      logout.mutate();
+                    }}
+                  >
+                    Logout
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>
