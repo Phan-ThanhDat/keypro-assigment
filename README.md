@@ -1,6 +1,6 @@
 # Keypro Assigment Frontend
 
-The app requires a backend service to function. I chose to implement a prototype backend instead of mocking an API to showcase my skills.
+**You can check the app live in [here](https://dev4.d2hnkyw4r17h6p.amplifyapp.com/).** If you have some trouble to run it locally.
 
 ## Features
 
@@ -26,7 +26,13 @@ Cluster support to improve perfomance when display many points
 
 ## Enviroment config
 
-...
+Copy `.env.example` to `.env` and change.
+
+The app requires a backend service to function. I chose to implement a prototype backend instead of mocking an API to showcase my skills. The API host included in the enviroment file. Mostly you only need to change Google Map API.
+
+In the email I sent included the test Google Map API key, and accounts to login the app.
+
+The app relies on one premium feature of Google Maps (Cluster), so please add the API key if you want to check the code locally.
 
 ## Development
 
@@ -95,3 +101,10 @@ The developer tend to have to deal with state management (like `isLoading`, `isF
 Form validation is always needed. We can guide the user to the correct data when they submit it, which reduces the work for the backend servers.
 
 `React-hook-form` is an excellent library to use, but the missing validation schema is not good. By using it with `zod` we can almost validate any complex data schema.
+
+## Code quality
+
+- Ensure the code linted with `eslint`, `style-lint`
+- Formated code with `prettier`
+- Commit lint `commit-lint`
+- All the process automatically when commit the code by `husky`, `lint-staged`
