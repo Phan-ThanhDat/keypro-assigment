@@ -42,7 +42,7 @@ export function HomePage() {
                 Terms of Use
               </button>
               <button className="bg-background text-xs py-0.5 px-1">
-                Report a map error
+                Report a map errors
               </button>
             </div>
             <div className="ml-auto">
