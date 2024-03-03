@@ -14,7 +14,7 @@ import {
   SelectItem,
   SelectValue,
 } from "@components";
-import { Down, MoreDot } from "@components/icons";
+import { Down, MoreDot, Calendar } from "@components/icons";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSavePoint, useToast, useUpdatePoint } from "@hooks";
 import { PointMarker } from "@models";
@@ -82,7 +82,7 @@ export function PointForm(props: PointFormProps) {
     trigger,
     control,
     setValue,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitting, isValid },
   } = useForm<SchemaType>({
     resolver: zodResolver(schema),
     mode: "onBlur",
@@ -277,6 +277,7 @@ export function PointForm(props: PointFormProps) {
                       renderTrigger={<SelectValue />}
                       error={errors.installYear?.message}
                       id="select-install-year"
+                      icon={<Calendar className="text-xl" />}
                     >
                       <SelectGroup>
                         <SelectItem value="2023">2023</SelectItem>
@@ -369,7 +370,7 @@ export function PointForm(props: PointFormProps) {
               intent="fill"
               colorStyle="primary"
               type="submit"
-              disabled={disabled}
+              disabled={disabled || !isValid}
             >
               Save
             </Button>

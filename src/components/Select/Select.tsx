@@ -10,9 +10,10 @@ function Select(
     className?: string;
     renderTrigger?: React.ReactNode;
     id: string;
+    icon?: React.ReactNode;
   },
 ) {
-  const { renderTrigger, children, error, className, id } = props;
+  const { renderTrigger, children, error, className, id, icon } = props;
   return (
     <div className={className}>
       <SelectPrimitive.Root {...props}>
@@ -21,6 +22,7 @@ function Select(
           id={id}
           aria-invalid={!!error}
           aria-describedby={`${id}-error`}
+          icon={icon}
         >
           {renderTrigger}
         </SelectTrigger>
@@ -47,8 +49,10 @@ const SelectValue = SelectPrimitive.Value;
 
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> & {
+    icon?: React.ReactNode;
+  }
+>(({ className, children, icon, ...props }, ref) => (
   <SelectPrimitive.Trigger
     ref={ref}
     className={twMerge(
@@ -58,9 +62,7 @@ const SelectTrigger = React.forwardRef<
     {...props}
   >
     {children}
-    <SelectPrimitive.Icon asChild>
-      <Unroll />
-    </SelectPrimitive.Icon>
+    <SelectPrimitive.Icon asChild>{icon || <Unroll />}</SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
