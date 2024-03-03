@@ -2,7 +2,8 @@ import { useNavigate } from "react-router-dom";
 
 import { login, logout } from "@apis";
 import { useUserStore } from "@stores/user";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useBoardStore } from "@stores/board";
 
 export function useLogin() {
   const setUser = useUserStore((state) => state.set);
@@ -19,6 +20,10 @@ export function useLogin() {
 
 export function useLogout() {
   const setUser = useUserStore((state) => state.set);
+  const resetUser = useUserStore((state) => state.reset);
+  const resetBoard = useBoardStore((state) => state.reset);
+  const client = useQueryClient();
+
   const navigate = useNavigate();
   return useMutation({
     mutationFn: async () => {
@@ -26,6 +31,9 @@ export function useLogout() {
       setUser((state) => {
         state.user = undefined;
       });
+      resetUser();
+      resetBoard();
+      client.clear();
       navigate("/login");
     },
   });
