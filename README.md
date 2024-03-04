@@ -1,6 +1,6 @@
 # Keypro Assigment Frontend
 
-**You can check the app live in [here](https://dev4.d2hnkyw4r17h6p.amplifyapp.com/).** If you have some trouble to run it locally.
+**You can check the app live in [here](https://keypro-assigment.solodev.info/).** If you have some trouble to run it locally.
 
 ## Features
 
